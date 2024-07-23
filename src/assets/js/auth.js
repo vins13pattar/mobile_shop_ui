@@ -2,7 +2,6 @@ import axios from "axios";
 import { storage } from "./storage";
 
 export default async function checkAuth(ctx, next) {
-  console.log(ctx);
   const tokens = storage.get("tokens");
   if (tokens !== null && ctx.route.url !== "/login") {
     const res = await axios.post(

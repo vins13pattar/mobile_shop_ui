@@ -19,18 +19,16 @@ import { product as productView } from "./pages/product"
 router.use(checkAuth)
 
 // Register routes
-router.add("/", ({ html, useAfter, useData }) => {
-  // const user = "John";
+router.add("/", ({  useAfter }) => {
   useAfter(() => {
     getProducts();
     handleEnquiry();
   });
 
-  return html`${home}`;
+  return home;
 });
 
 router.add("/about", (ctx) => {
-  console.log(ctx.route.url);
   return about;
 });
 
@@ -45,11 +43,12 @@ router.add("/login", ({useAfter}) => {
   return login;
 });
 
-router.add("/product:id", async ({ route, html, useAfter}) => {
+router.add("/product/:id", ({ route, useAfter}) => {
+  console.log(route.params)
   useAfter(() => {
     getProduct(route.params.id);
   });
-  return html`${productView}`
+  return productView
 })
 
 router.add("/register", () => {
@@ -74,10 +73,6 @@ router.onError((err, ctx) => {
   // message => ctx.noop is not a function
 });
 
-addEventListener("load", () => {
-  router.resolve();
-});
-
 const logoutButton = document.getElementById("logout-button");
 
 logoutButton.addEventListener("click", async (e) => {
@@ -98,4 +93,8 @@ logoutButton.addEventListener("click", async (e) => {
   storage.delete("tokens");
   storage.delete("username");
   window.location.href = "/";
+});
+
+addEventListener("load", () => {
+  router.resolve();
 });
