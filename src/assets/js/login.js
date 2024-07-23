@@ -64,7 +64,7 @@ async function login(username, password) {
   formData.append("username", username);
   formData.append("password", password);
   const res = await axios.post(
-    "http://localhost:8000/api/token/",
+    "https://mobile-shop-api-8e7c1abc4ef8.herokuapp.com/api/token/",
     formData
   );
 

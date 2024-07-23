@@ -25,21 +25,21 @@ export const home = `
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img
-        src="http://localhost:8000/static/images/mobile-1.jpg"
+        src="https://mobile-shop-api-8e7c1abc4ef8.herokuapp.com/static/images/mobile-1.jpg"
         class="d-block w-100"
         alt="..."
       />
     </div>
     <div class="carousel-item">
       <img
-        src="http://localhost:8000/static/images/mobile-1.jpg"
+        src="https://mobile-shop-api-8e7c1abc4ef8.herokuapp.com/static/images/mobile-1.jpg"
         class="d-block w-100"
         alt="..."
       />
     </div>
     <div class="carousel-item">
       <img
-        src="http://localhost:8000/static/images/mobile-1.jpg"
+        src="https://mobile-shop-api-8e7c1abc4ef8.herokuapp.com/static/images/mobile-1.jpg"
         class="d-block w-100"
         alt="..."
       />

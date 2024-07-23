@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default async function getProducts() {
-    const res = await axios.get("http://localhost:8000/products/");
+    const res = await axios.get("https://mobile-shop-api-8e7c1abc4ef8.herokuapp.com/products/");
     console.log(res);
     showProducts(res.data.results);
 }

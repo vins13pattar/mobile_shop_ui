@@ -84,7 +84,7 @@ logoutButton.addEventListener("click", async (e) => {
   e.preventDefault()
   const tokens = storage.get("tokens");
   const res = await axios.post(
-    "http://localhost:8000/account/logout/",
+    "https://mobile-shop-api-8e7c1abc4ef8.herokuapp.com/account/logout/",
     { refresh: tokens.refresh },
     {
       headers: {

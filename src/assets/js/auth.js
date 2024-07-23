@@ -6,7 +6,7 @@ export default async function checkAuth(ctx, next) {
   const tokens = storage.get("tokens");
   if (tokens !== null && ctx.route.url !== "/login") {
     const res = await axios.post(
-      "http://localhost:8000/api/token/verify/",
+      "https://mobile-shop-api-8e7c1abc4ef8.herokuapp.com/api/token/verify/",
       { token: tokens.access },
       {
         headers: {
