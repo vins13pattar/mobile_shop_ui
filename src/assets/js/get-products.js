@@ -28,7 +28,8 @@ function showProducts(products) {
     const divCol = createElement("div", "col");
 
     const anchorLink = createElement("a", "text-decoration-none", "text-dark");
-    anchorLink.href = `/product/${product.id}`;
+    anchorLink.href = `product/${product.id}`;
+    anchorLink.setAttribute('van-link', '')
 
     const divCard = createElement("div", "card", { width: "18rem" }); // Div Card
 

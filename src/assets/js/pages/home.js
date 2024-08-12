@@ -1,4 +1,5 @@
-export const home = `
+export const home = (products) => {
+  return `
 <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
     <button
@@ -67,7 +68,46 @@ export const home = `
 
 <div class="container my-5 text-center">
   <h2>Our mobiles</h2>
-  <div id="products"></div>
+  <div id="products">
+        
+        <div class="col" style="">
+          <a class="text-decoration-none" href="${products[0].url}" van-link="" style="">
+            <div class="card" style="">
+              <img class="card-img-top" src="${products[0].image}" alt="Mobile 1" style="">
+            <div class="card-body" style="">
+              <h5 class="card-title" style="">${products[0].name}</h5>
+              <p class="card-text" style="">${products[0].description}</p>
+              <a class="btn" href="#" style="">Buy for $${products[0].price}</a>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col" style="">
+          <a class="text-decoration-none" href="${products[1].url}" van-link="" style="">
+            <div class="card" style="">
+              <img class="card-img-top" src="${products[1].image}" alt="Mobile 1" style="">
+            <div class="card-body" style="">
+              <h5 class="card-title" style="">${products[1].name}</h5>
+              <p class="card-text" style="">${products[1].description}</p>
+              <a class="btn" href="#" style="">Buy for $${products[1].price}</a>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="col" style="">
+          <a class="text-decoration-none" href="${products[2].url}" van-link="" style="">
+            <div class="card" style="">
+              <img class="card-img-top" src="${products[2].image}" alt="Mobile 1" style="">
+            <div class="card-body" style="">
+              <h5 class="card-title" style="">${products[2].name}</h5>
+              <p class="card-text" style="">${products[2].description}</p>
+              <a class="btn" href="#" style="">Buy for $${products[2].price}</a>
+            </div>
+          </div>
+          </a>
+        </div>
+  </div>
 </div>
 
 <section class="container py-5">
@@ -156,3 +196,4 @@ export const home = `
   </form>
 </section>
 `
+}

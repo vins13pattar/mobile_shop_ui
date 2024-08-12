@@ -18,14 +18,20 @@ import { product as productView } from "./pages/product"
 // Middleware
 router.use(checkAuth)
 
+console.log(router)
+
+// router.add("*", () => {
+//   return `<div class="container p-5 m-5"><h1>404 not found</h1></div>`;
+// });
+
 // Register routes
-router.add("/", ({  useAfter }) => {
+router.add("/", ({  useAfter, html }) => {
   useAfter(() => {
     getProducts();
     handleEnquiry();
   });
 
-  return home;
+  return html`${home()}`;
 });
 
 router.add("/about", (ctx) => {
@@ -50,6 +56,7 @@ router.add("/product/:id", ({ route, useAfter}) => {
   });
   return productView
 })
+
 
 router.add("/register", () => {
   return register;
